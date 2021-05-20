@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -12,7 +13,10 @@ class PageController extends Controller
     }
     public function shop()
     {
-        return view('shop');
+        $categories = Category::all();
+        return view('shop')->with([
+            'categories' => $categories
+        ]);
     }
     public function detail()
     {
