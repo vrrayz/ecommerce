@@ -1,15 +1,15 @@
 <div class="col-lg-3 order-2 order-lg-1">
     <h5 class="text-uppercase mb-4">Categories</h5>
-    @foreach($categories as $category)
-        <div class="py-2 px-4 {{ ($loop->iteration == 1)?'bg-dark':'bg-light' }} {{ ($loop->iteration == 1)?'text-white':'text-dark' }} mb-3"><strong class="small text-uppercase font-weight-bold">{{ $category->name }}</strong></div>
-    <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-        <li class="mb-2"><a class="reset-anchor" href="#">Women's T-Shirts</a></li>
-        <li class="mb-2"><a class="reset-anchor" href="#">Men's T-Shirts</a></li>
-        <li class="mb-2"><a class="reset-anchor" href="#">Dresses</a></li>
-        <li class="mb-2"><a class="reset-anchor" href="#">Novelty socks</a></li>
-        <li class="mb-2"><a class="reset-anchor" href="#">Women's sunglasses</a></li>
-        <li class="mb-2"><a class="reset-anchor" href="#">Men's sunglasses</a></li>
-    </ul>
+    @foreach ($categories as $category)
+        <div
+            class="py-2 px-4 {{ $loop->iteration == 1 ? 'bg-dark' : 'bg-light' }} {{ $loop->iteration == 1 ? 'text-white' : 'text-dark' }} mb-3">
+            <strong class="small text-uppercase font-weight-bold">{{ $category->name }}</strong>
+        </div>
+        <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
+            @foreach($category->subCategories as $subCategory)
+                <li class="mb-2"><a class="reset-anchor" href="#">{{ $subCategory->name }}</a></li>
+            @endforeach
+        </ul>
     @endforeach
     <h6 class="text-uppercase mb-4">Price range</h6>
     <div class="price-range pt-4 mb-5">
