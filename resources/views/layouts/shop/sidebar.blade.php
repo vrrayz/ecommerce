@@ -2,12 +2,12 @@
     <h5 class="text-uppercase mb-4">Categories</h5>
     @foreach ($categories as $category)
         <div
-            class="py-2 px-4 {{ $loop->iteration == 1 ? 'bg-dark' : 'bg-light' }} {{ $loop->iteration == 1 ? 'text-white' : 'text-dark' }} mb-3">
+            class="py-2 px-4 {{ (($loop->iteration == 1 && !request()->subCategory) || (request()->subCategory && $subCategoryProducts->first()->subCategory->category->id == $category->id)) ? 'bg-dark' : 'bg-light' }} {{ (($loop->iteration == 1 && !request()->subCategory) || (request()->subCategory && $subCategoryProducts->first()->subCategory->category->id == $category->id)) ? 'text-white' : 'text-dark' }} mb-3">
             <strong class="small text-uppercase font-weight-bold">{{ $category->name }}</strong>
         </div>
         <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
             @foreach($category->subCategories as $subCategory)
-                <li class="mb-2"><a class="reset-anchor" href="#">{{ $subCategory->name }}</a></li>
+                <li class="mb-2"><a class="reset-anchor" href="?subCategory={{ $subCategory->name }}">{{ $subCategory->name }}</a></li>
             @endforeach
         </ul>
     @endforeach

@@ -47,7 +47,7 @@
                 </div>
                 <div class="row">
                   <!-- PRODUCT-->
-                  @foreach($categories->first()->subCategories->first()->products as $product)
+                  @foreach($subCategoryProducts as $product)
                     <div class="col-lg-4 col-sm-6">
                     <div class="product text-center">
                       <div class="mb-3 position-relative">
@@ -61,7 +61,7 @@
                         </div>
                       </div>
                       <h6> <a class="reset-anchor" href="/detail">{{ $product->name }}</a></h6>
-                      <p class="small text-muted">$250</p>
+                      <p class="small text-muted">${{ $product->price }}</p>
                     </div>
                   </div>
                   @endforeach
