@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -24,9 +25,11 @@ class PageController extends Controller
             'subCategoryProducts' => $subCategoryProducts,
         ]);
     }
-    public function detail()
+    public function detail(Product $product)
     {
-        return view('detail');
+        return view('detail')->with([
+            'product' => $product
+        ]);
     }
     public function cart()
     {
