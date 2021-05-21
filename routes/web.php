@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ Route::get('/', [PageController::class, 'index']);
 Route::get('/shop', [PageController::class, 'shop']);
 Route::get('/product/{product}', [PageController::class, 'detail']);
 Route::get('/cart', [PageController::class, 'cart']);
-// Route::post('/cart', [CartController::class, 'cart']);
+Route::post('/cart', [CartController::class, 'addToCart']);
 Route::get('/checkout', [PageController::class, 'checkout']);
 
 Auth::routes();
