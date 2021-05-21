@@ -85,7 +85,7 @@
       <script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
       <script src="/vendor/owl.carousel2/owl.carousel.min.js"></script>
       <script src="/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-      <script src="js/front.js"></script>
+      <script src="/js/front.js"></script>
       @yield('extra-script')
       <script>
         // ------------------------------------------------------- //
