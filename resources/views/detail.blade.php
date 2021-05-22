@@ -52,9 +52,9 @@
                                     class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
                                     <span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
                                     <div class="quantity">
-                                        <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                                        <button class="dec-btn p-0" type="button"><i class="fas fa-caret-left"></i></button>
                                         <input class="form-control border-0 shadow-0 p-0" name="quantity" type="text" value="1">
-                                        <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+                                        <button class="inc-btn p-0" type="button"><i class="fas fa-caret-right"></i></button>
                                     </div>
                                 </div>
                             </form>
